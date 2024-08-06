@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import "../style.css";
+import picture from "../img/image.png";
 
 function EmployeeProfile() {
   return (
     <>
       <div className="grid-container">
-        <img src="../../public/img/image.png" className="picture"/>
+        <img src={picture} className="picture" />
         <div className="name">Дмитриев Игорь Степанович</div>
         <div className="position">Дизайнер</div>
         <div className="stack">

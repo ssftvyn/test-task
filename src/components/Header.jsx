@@ -12,8 +12,8 @@ function Header() {
         <div className="contact-center">
           <p>info@66bit.ru</p>
         </div>
-        <label htmlFor="switch" className="switch">
-          <input type="checkbox" id="slider" />
+        <label id="switch" className="switch">
+          <input type="checkbox" onchange="toggleTheme()" id="slider" />
           <span className="slider round"></span>
         </label>
       </div>
