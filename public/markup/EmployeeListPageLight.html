@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- C:\Users\kiki\Desktop\test-task\my-spa-app\public\img -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/style.css" type="text/css" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Test task</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../img/logo.svg" alt="лого 66bit" />
+      </div>
+      <div class="contact-info">
+        <div class="contact-left">
+          <p>+7 343 290 84 76</p>
+        </div>
+        <div class="contact-center">
+          <p>info@66bit.ru</p>
+        </div>
+        <label id="switch" class="switch">
+          <input type="checkbox" onchange="toggleTheme()" id="slider" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+    <div class="breadcrumbs">
+      <a href="#">Главная</a>
+      <img src="../img/akar.svg" alt="акариконка" />
+      <a href="#">Список сотрудников</a>
+    </div>
+
+    <div class="filters">
+      <h1>Список сотрудников</h1>
+      <label for="position">Должность:</label>
+      <select name="position" id="position">
+        <option value="backend">Backend-разработчик</option>
+        <option value="frontend">Frontend-разработчик</option>
+        <option value="analyst">Аналитик</option>
+        <option value="manager">Менеджер</option>
+        <option value="designer">Дизайнер</option>
+        <option value="fullstack">Fullstack</option>
+      </select>
+      <label for="gender">Пол:</label>
+      <select name="gender" id="gender">
+        <option value="male">Мужской</option>
+        <option value="female">Женский</option>
+      </select>
+      <label for="gender">Стек технологий:</label>
+      <select name="stack" id="stack"></select>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Поиск..." />
+    </div>
+
+    <div class="selected-filters">
+      <p>Выбранные фильтры:</p>
+      <ul>
+        <li>Fullstack</li>
+        <li>Женщина</li>
+      </ul>
+      <button class="find-button">Найти</button>
+    </div>
+
+    <div class="inf">
+      <p>ФИО</p>
+      <p>Должность</p>
+      <p>Номер телефона</p>
+      <p>Дата рождения</p>
+    </div>
+  </body>
+</html>
