@@ -32,8 +32,8 @@ function ListInfo({ searchQuery, genderFilter, positionFilter }) {
 
   const filteredData = data.filter((item) =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (genderFilter === '' || item.gender === genderFilter) &&
-    (positionFilter === '' || item.position === positionFilter)
+    (genderFilter.length === 0 || genderFilter.includes(item.gender)) &&
+    (positionFilter.length === 0  || positionFilter.includes(item.position))
   );
 
   return (
