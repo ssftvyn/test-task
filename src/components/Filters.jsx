@@ -3,14 +3,16 @@ import "../style.css";
 import vectorSvg from "../img/vector.svg";
 
 function Filters() {
-  const handleDropdownClick = () => {
-    const dropdownButton =
-      document.getElementsByClassName("wrapper-dropdown")[0];
-    if (dropdownButton) {
-      dropdownButton.classList.toggle("active");
-    }
+  const handleDropdownClick = (event) => {
+    const dropdownButtons = document.getElementsByClassName("wrapper-dropdown");
+    Array.from(dropdownButtons).forEach((dropdownButton) => {
+      if (dropdownButton !== event.target.closest(".wrapper-dropdown")) {
+        dropdownButton.classList.remove("active");
+      } else {
+        dropdownButton.classList.toggle("active");
+      }
+    });
   };
-
   return (
     <div className="filters">
       <h1>Список сотрудников</h1>
@@ -41,6 +43,20 @@ function Filters() {
           <li>
             <label htmlFor="fullstack">Fullstack</label>
             <input type="checkbox" id="fullstack" />
+          </li>
+        </ul>
+      </div>
+      <div className="wrapper-dropdown" onClick={handleDropdownClick}>
+        <p>Пол</p>
+        <img src={vectorSvg} alt="Vector" className="vector-icon" />
+        <ul className="dropdown">
+          <li>
+            <label htmlFor="male">Мужской</label>
+            <input type="checkbox" id="male" />
+          </li>
+          <li>
+            <label htmlFor="female">Женский</label>
+            <input type="checkbox" id="female" />
           </li>
         </ul>
       </div>
