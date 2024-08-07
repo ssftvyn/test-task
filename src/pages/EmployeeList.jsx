@@ -11,7 +11,7 @@ function EmployeeList() {
   return (
     <div className="App">
       <Breadcrumbs />
-      <Filters/>
+      {/* <Filters/> */}
       <Search onSearch={setSearchQuery} />
       <SelectedFilters />
       <ListInfo searchQuery={searchQuery} />
