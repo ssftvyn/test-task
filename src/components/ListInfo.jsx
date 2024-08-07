@@ -52,10 +52,11 @@ function ListInfo({ searchQuery, genderFilter, positionFilter }) {
     navigate(`/employee/${id}`, { state: { id } });
   };
 
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (genderFilter.length === 0 || genderFilter.includes(item.gender)) &&
-    (positionFilter.length === 0 || positionFilter.includes(item.position))
+  const filteredData = data.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      (genderFilter.length === 0 || genderFilter.includes(item.gender)) &&
+      (positionFilter.length === 0 || positionFilter.includes(item.position))
   );
 
   return (

@@ -13,11 +13,7 @@ function Header({ switchTheme }) {
           <p>info@66bit.ru</p>
         </div>
         <label id="switch" className="switch">
-          <input
-            type="checkbox"
-            onChange={switchTheme}
-            id="slider"
-          />
+          <input type="checkbox" onChange={switchTheme} id="slider" />
           <span className="slider round"></span>
         </label>
       </div>

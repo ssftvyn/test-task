@@ -1,5 +1,5 @@
-import React from 'react';
-import ProfileInfo from '../components/ProfileInfo';
+import React from "react";
+import ProfileInfo from "../components/ProfileInfo";
 
 function EmployeeProfile({ id }) {
   return (

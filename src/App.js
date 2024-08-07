@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './style.css';
-import Header from './components/Header';
-import EmployeeList from './pages/EmployeeList';
-import EmployeeProfile from './pages/EmployeeProfile';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React, { useState } from "react";
+import "./style.css";
+import Header from "./components/Header";
+import EmployeeList from "./pages/EmployeeList";
+import EmployeeProfile from "./pages/EmployeeProfile";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme, GlobalStyles } from "./theme";
 
