@@ -1,12 +1,12 @@
-import React from "react";
-import "../style.css";
+// import React from "react";
+// import "../style.css";
 
-function Search() {
-  return (
-    <div className="search">
-      <input type="text" placeholder="Поиск..." />
-    </div>
-  );
-}
+// function Search() {
+//   return (
+//     <div className="search">
+//       <input type="text" placeholder="Поиск..." />
+//     </div>
+//   );
+// }
 
-export default Search;
+// export default Search;

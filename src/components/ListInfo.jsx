@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function ListInfo() {
+function ListInfo({ searchQuery }) {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -26,6 +26,10 @@ function ListInfo() {
     fetchData();
   }, []);
 
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const handleItemClick = (id) => {
     navigate(`/employee/${id}`, { state: { id } });
   };
@@ -40,7 +44,7 @@ function ListInfo() {
       </div>
 
       <div className="info-list">
-        {data.map((item, index) => (
+        {filteredData.map((item, index) => (
           <div
             key={index}
             className="info-item"

@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Filters from "../components/Filters";
-import Search from "../components/Search";
-import SelectedFilters from "../components/SelectedFilters";
 import ListInfo from "../components/ListInfo";
 import Breadcrumbs from "../components/Breadcrumbs";
 
 function EmployeeList() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     <div className="App">
       <Breadcrumbs />
-      <Filters />
-      <Search />
-      <SelectedFilters />
-      <ListInfo />
+      <Filters onSearch={setSearchQuery} />
+      <ListInfo searchQuery={searchQuery} />
     </div>
   );
 }

@@ -2,7 +2,10 @@ import React from "react";
 import "../style.css";
 import vectorSvg from "../img/vector.svg";
 
-function Filters() {
+function Filters({ onSearch }) {
+  const handleSearch = (event) => {
+    onSearch(event.target.value);
+  };
   const handleDropdownClick = (event) => {
     const dropdownButtons = document.getElementsByClassName("wrapper-dropdown");
     Array.from(dropdownButtons).forEach((dropdownButton) => {
@@ -13,8 +16,10 @@ function Filters() {
       }
     });
   };
+
   return (
-    <div className="filters">
+    <div className="filters-search-selected">
+    <div className="filters"> 
       <h1>Список сотрудников</h1>
       <div className="wrapper-dropdown" onClick={handleDropdownClick}>
         <p>Должность</p>
@@ -59,6 +64,18 @@ function Filters() {
             <input type="checkbox" id="female" />
           </li>
         </ul>
+      </div>
+      </div>
+      <div className="search">
+        <input type="text" placeholder="Поиск..." onChange={handleSearch} />
+      </div>
+      <div className="selected-filters">
+        <p>Выбранные фильтры:</p>
+        <ul>
+          <li>Fullstack</li>
+          <li>Женщина</li>
+        </ul>
+        <button className="find-button">Найти</button>
       </div>
     </div>
   );
