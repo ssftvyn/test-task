@@ -1,7 +1,7 @@
 import React from "react";
 import "../style.css";
 
-function Header() {
+function Header({ switchTheme }) {
   return (
     <header>
       <div className="logo"></div>
@@ -13,7 +13,11 @@ function Header() {
           <p>info@66bit.ru</p>
         </div>
         <label id="switch" className="switch">
-          <input type="checkbox" onchange="toggleTheme()" id="slider" />
+          <input
+            type="checkbox"
+            onChange={switchTheme}
+            id="slider"
+          />
           <span className="slider round"></span>
         </label>
       </div>
