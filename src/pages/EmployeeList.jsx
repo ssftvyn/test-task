@@ -1,3 +1,4 @@
+// EmployeeList.js
 import React, { useState } from "react";
 import Filters from "../components/Filters";
 import ListInfo from "../components/ListInfo";
@@ -7,14 +8,23 @@ import SelectedFilters from "../components/SelectedFilters";
 
 function EmployeeList() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [genderFilter, setGenderFilter] = useState("");
+  const [positionFilter, setPositionFilter] = useState("");
 
   return (
     <div className="App">
       <Breadcrumbs />
-      {/* <Filters/> */}
+      <Filters
+        setGenderFilter={setGenderFilter}
+        setPositionFilter={setPositionFilter}
+      />
       <Search onSearch={setSearchQuery} />
       <SelectedFilters />
-      <ListInfo searchQuery={searchQuery} />
+      <ListInfo
+        searchQuery={searchQuery}
+        genderFilter={genderFilter}
+        positionFilter={positionFilter}
+      />
     </div>
   );
 }
