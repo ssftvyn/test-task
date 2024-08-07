@@ -1,4 +1,3 @@
-// EmployeeList.js
 import React, { useState } from "react";
 import Filters from "../components/Filters";
 import ListInfo from "../components/ListInfo";
@@ -8,8 +7,8 @@ import SelectedFilters from "../components/SelectedFilters";
 
 function EmployeeList() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [genderFilter, setGenderFilter] = useState("");
-  const [positionFilter, setPositionFilter] = useState("");
+  const [genderFilter, setGenderFilter] = useState([]);
+  const [positionFilter, setPositionFilter] = useState([]);
 
   return (
     <div className="App">
@@ -19,7 +18,10 @@ function EmployeeList() {
         setPositionFilter={setPositionFilter}
       />
       <Search onSearch={setSearchQuery} />
-      <SelectedFilters />
+      <SelectedFilters
+        positionFilter={positionFilter}
+        genderFilter={genderFilter}
+      />
       <ListInfo
         searchQuery={searchQuery}
         genderFilter={genderFilter}

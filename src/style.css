@@ -240,15 +240,6 @@ h1 {
   list-style: none;
 }
 
-.find-button {
-  margin: 15px 0px 15px auto;
-  background-color: #155da4;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 5px 48px;
-}
-
 /* информация */
 .info {
   display: flex;

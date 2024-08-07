@@ -34,7 +34,7 @@ function ProfileInfo() {
   }, [id]);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   const { name, photo, position, stack, phone, birthdate, dateOfEmployment } =
