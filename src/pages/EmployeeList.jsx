@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Filters from "../components/Filters";
 import ListInfo from "../components/ListInfo";
 import Breadcrumbs from "../components/Breadcrumbs";
+import Search from "../components/Search";
+import SelectedFilters from "../components/SelectedFilters";
 
 function EmployeeList() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,7 +11,9 @@ function EmployeeList() {
   return (
     <div className="App">
       <Breadcrumbs />
-      <Filters onSearch={setSearchQuery} />
+      <Filters/>
+      <Search onSearch={setSearchQuery} />
+      <SelectedFilters />
       <ListInfo searchQuery={searchQuery} />
     </div>
   );

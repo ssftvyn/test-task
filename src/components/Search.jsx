@@ -1,12 +1,15 @@
-// import React from "react";
-// import "../style.css";
+import React from "react";
 
-// function Search() {
-//   return (
-//     <div className="search">
-//       <input type="text" placeholder="Поиск..." />
-//     </div>
-//   );
-// }
+function Search({ onSearch }) {
+  const handleSearch = (event) => {
+    onSearch(event.target.value);
+  };
 
-// export default Search;
+  return (
+    <div className="search">
+      <input type="text" placeholder="Поиск..." onChange={handleSearch} />
+    </div>
+  );
+}
+
+export default Search;
