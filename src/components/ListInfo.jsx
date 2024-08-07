@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Information() {
+function ListInfo() {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +23,10 @@ function Information() {
     fetchData();
   }, []);
 
+  const handleItemClick = (id) => {
+    navigate(`/employee/${id}`, { state: { id } });
+  };
+  
   return (
     <div>
       <div className="info">
@@ -32,7 +38,11 @@ function Information() {
 
       <div className="info-list">
         {data.map((item, index) => (
-          <div key={index} className="info-item">
+          <div
+            key={index}
+            className="info-item"
+            onClick={() => handleItemClick(item.id)}
+          >
             <p>{item.name}</p>
             <p>{item.position}</p>
             <p>{item.phone}</p>
@@ -44,4 +54,4 @@ function Information() {
   );
 }
 
-export default Information;
+export default ListInfo;
