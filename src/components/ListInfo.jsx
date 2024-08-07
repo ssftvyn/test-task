@@ -8,15 +8,18 @@ function ListInfo() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://frontend-test-api.stk8s.66bit.ru/api/Employee', {
-          headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        const response = await fetch(
+          "https://frontend-test-api.stk8s.66bit.ru/api/Employee",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
-        });
+        );
         const responseData = await response.json();
         setData(responseData);
       } catch (error) {
-        console.error('Ошибка при получении данных:', error);
+        console.error("Ошибка при получении данных:", error);
       }
     };
 
@@ -26,7 +29,7 @@ function ListInfo() {
   const handleItemClick = (id) => {
     navigate(`/employee/${id}`, { state: { id } });
   };
-  
+
   return (
     <div>
       <div className="info">

@@ -1,5 +1,7 @@
+// ProfileInfo.jsx
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import Breadcrumbs from "./Breadcrumbs";
 
 function ProfileInfo() {
   const { id } = useParams();
@@ -8,11 +10,14 @@ function ProfileInfo() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://frontend-test-api.stk8s.66bit.ru/api/Employee/${id}`, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          `https://frontend-test-api.stk8s.66bit.ru/api/Employee/${id}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -32,10 +37,13 @@ function ProfileInfo() {
     return <div>Loading...</div>;
   }
 
-  const { name, photo, position, stack, phone, birthdate, dateOfEmployment } = data;
+  const { name, photo, position, stack, phone, birthdate, dateOfEmployment } =
+    data;
 
   return (
     <>
+      <Breadcrumbs id={id} name={name} />
+
       <div className="grid-container">
         <img src={photo} className="photo" alt="" />
         <div className="name">{name}</div>
